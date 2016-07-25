@@ -1,21 +1,39 @@
 <!doctype>
 <html>
 <head><script type="text/javascript">
-var xuehao = 1000;
-function init(){
-	document.getElementById('dafd').src = "http://yjs.zjut.edu.cn/photo/yjs/"+xuehao+".jpg";
+var xuehao = 0;
+var xueyuan = 1;
+var nu = "";
+function calculation(){
+	var s1 = (xueyuan>=10)?xueyuan:("0"+xueyuan);
+	var s2 = (xuehao<10)?("00"+xuehao):((xuehao<100)?("0"+xuehao):xuehao);
+	nu = s1+""+s2;
 }
 function select(){
 	xuehao++;
-	//alert(xuehao);
-	document.getElementById('dafd').src = "http://yjs.zjut.edu.cn/photo/yjs/211160"+xuehao+".jpg";
-	cs1.innerHTML = "211160"+xuehao;
+	calculation()
+	document.getElementById('dafd').src = "http://yjs.zjut.edu.cn/photo/yjs/21116"+nu+".jpg";
+	cs1.innerHTML = "21116"+nu;
 }
 function select1(){
 	xuehao--;
-	//alert(xuehao);
-	document.getElementById('dafd').src = "http://yjs.zjut.edu.cn/photo/yjs/211160"+xuehao+".jpg";
-	cs1.innerHTML = "211160"+xuehao;
+	calculation()
+	document.getElementById('dafd').src = "http://yjs.zjut.edu.cn/photo/yjs/21116"+nu+".jpg";
+	cs1.innerHTML = "21116"+nu;
+}
+function select2(){
+	xueyuan++;
+	xuehao = 1;
+	calculation()
+	document.getElementById('dafd').src = "http://yjs.zjut.edu.cn/photo/yjs/21116"+nu+".jpg";
+	cs1.innerHTML = "21116"+nu;
+}
+function select3(){
+	xueyuan--;
+	xuehao = 1;
+	calculation()
+	document.getElementById('dafd').src = "http://yjs.zjut.edu.cn/photo/yjs/21116"+nu+".jpg";
+	cs1.innerHTML = "21116"+nu;
 }
 </script>
 <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
@@ -26,8 +44,11 @@ function select1(){
 <br/>
 <button id="btn1" class="btn" onClick="select();">Start</button>
 <button id="btn1" class="btn" onClick="select1();">Back</button>
+<br/><br/>
+<button id="btn1" class="btn" onClick="select2();">xue+</button>
+<button id="btn1" class="btn" onClick="select3();">xue-</button>
 <p>学号：<span id = "cs1" name = "cs">2111601000</span></p>
 </div>
-</body onload="init()">
+</body>
 
 </html>
