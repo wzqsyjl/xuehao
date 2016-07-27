@@ -3,36 +3,50 @@
 <head><script type="text/javascript">
 var xuehao = 0;
 var xueyuan = 1;
+var nianji = 6;
 var nu = "";
 function calculation(){
+	var s0 = nianji;
 	var s1 = (xueyuan>=10)?xueyuan:("0"+xueyuan);
 	var s2 = (xuehao<10)?("00"+xuehao):((xuehao<100)?("0"+xuehao):xuehao);
-	nu = s1+""+s2;
+	nu = s0+""+s1+""+s2;
 }
 function select(){
 	xuehao++;
-	calculation()
-	document.getElementById('dafd').src = "http://yjs.zjut.edu.cn/photo/yjs/21116"+nu+".jpg";
-	cs1.innerHTML = "21116"+nu;
+	ff();
 }
 function select1(){
 	xuehao--;
-	calculation()
-	document.getElementById('dafd').src = "http://yjs.zjut.edu.cn/photo/yjs/21116"+nu+".jpg";
-	cs1.innerHTML = "21116"+nu;
+	ff();
 }
 function select2(){
 	xueyuan++;
 	xuehao = 1;
-	calculation()
-	document.getElementById('dafd').src = "http://yjs.zjut.edu.cn/photo/yjs/21116"+nu+".jpg";
-	cs1.innerHTML = "21116"+nu;
+	ff();
 }
 function select3(){
 	xueyuan--;
 	xuehao = 1;
+	ff();
+}
+function s2014(){
+	nianji = 4;
+	xuehao = 1;
+	ff();
+}
+function s2015(){
+	nianji = 5;
+	xuehao = 1;
+	ff();
+}
+function s2016(){
+	nianji = 6;
+	xuehao = 1;
+	ff();
+}
+function ff(){
 	calculation()
-	document.getElementById('dafd').src = "http://yjs.zjut.edu.cn/photo/yjs/21116"+nu+".jpg";
+	document.getElementById('dafd').src = "http://yjs.zjut.edu.cn/photo/yjs/2111"+nu+".jpg";
 	cs1.innerHTML = "21116"+nu;
 }
 </script>
@@ -40,6 +54,10 @@ function select3(){
 </head>
 <body>
 <div width = "150" align = "center">
+<button id="btn1" class="btn" onClick="s2014();">14</button>
+<button id="btn1" class="btn" onClick="s2015();">15</button>
+<button id="btn1" class="btn" onClick="s2016();">16</button>
+<br/>
 <image id = "dafd" src = " "  width="100" height="160"></image>
 <br/>
 <button id="btn1" class="btn" onClick="select();">Start</button>
